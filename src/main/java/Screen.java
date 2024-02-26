@@ -17,6 +17,8 @@ public class Screen {
         GLProfile.initSingleton();
         GLCapabilities caps = new GLCapabilities(GLProfile.get(GLProfile.GL2));
         window = GLWindow.create(caps);
+        GameArea gameArea = new GameArea();
+        window.addGLEventListener(gameArea);
         window.setSize(800, 600);
         window.setTitle("Snake Game");
 

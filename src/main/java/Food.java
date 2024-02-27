@@ -22,6 +22,7 @@ public class Food {
     }
 
     public void draw(GL2 gl) {
+        gl.glPointSize(35);
         gl.glColor3f(1, 0, 0); // Set color to red
         gl.glBegin(GL2.GL_POINTS);
         gl.glVertex2i(this.x, this.y);

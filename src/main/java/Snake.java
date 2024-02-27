@@ -61,6 +61,7 @@ public class Snake {
     }
 
     public void draw(GL2 gl) {
+        gl.glPointSize(35);
         gl.glColor3f(0, 1, 0); // Set color to green
         gl.glBegin(GL2.GL_POINTS);
 

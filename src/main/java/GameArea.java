@@ -26,9 +26,6 @@ public class GameArea implements GLEventListener, KeyListener {
         gl.glLoadIdentity();
         GLUgl2 glu = new GLUgl2();
         glu.gluOrtho2D(0, 800, 0, 600);
-        snake = new Snake();
-        food = new Food();
-        gameOver = false;
     }
 
     @Override

@@ -9,8 +9,8 @@ public class Food {
     }
 
     public void respawn() {
-        x = (int) (Math.random() * 20);
-        y = (int) (Math.random() * 20);
+        x = (int) (Math.random() * 800);
+        y = (int) (Math.random() * 600);
     }
 
     public int getX() {

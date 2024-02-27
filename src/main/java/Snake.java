@@ -36,7 +36,11 @@ public class Snake {
         int headY = head.getY() / 15;
         int foodX = food.getX() / 15;
         int foodY = food.getY() / 15;
-        return headX == foodX && headY == foodY;
+        boolean checkSnakeEatFood = headX == foodX && headY == foodY;
+        if (checkSnakeEatFood) {
+            snakeLength++;
+        }
+        return checkSnakeEatFood;
     }
 
     public Direction getDirection() {

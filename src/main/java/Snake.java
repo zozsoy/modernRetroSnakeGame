@@ -7,6 +7,8 @@ import java.util.List;
 public class Snake {
     private List<Point> body;
     private Direction direction;
+    private int snakeLength = 1;
+    private final int SCALE = 3;
 
     public Snake() {
         body = new ArrayList<>();
@@ -19,13 +21,22 @@ public class Snake {
         Point newHead = new Point(head.getX() + direction.getDx(), head.getY() + direction.getDy());
         body.add(0, newHead);
         if (body.size() > 1) {
+            for (int i = 1; i < body.size(); i++) {
+                body.set(i, new Point(body.get(i).getX() + direction.getDx() * SCALE, body.get(i).getY() + direction.getDy() * SCALE));
+            }
+        }
+        if (body.size() > snakeLength) {
             body.remove(body.size() - 1);
         }
     }
 
     public boolean eat(Food food) {
         Point head = body.get(0);
-        return head.getX() == food.getX() && head.getY() == food.getY();
+        int headX = head.getX() / 15;
+        int headY = head.getY() / 15;
+        int foodX = food.getX() / 15;
+        int foodY = food.getY() / 15;
+        return headX == foodX && headY == foodY;
     }
 
     public Direction getDirection() {
@@ -40,23 +51,18 @@ public class Snake {
         Point head = body.get(0);
         int x = head.getX();
         int y = head.getY();
-        int gridWidth = 800;
-        int gridHeight = 600;
-
-        return x < 0 || x >= gridWidth || y < 0 || y >= gridHeight;
+        return x < 0 || x >= 800 || y < 0 || y >= 600;
     }
 
     public boolean collidesWithItself() {
         List<Point> body = this.body;
         int headX = body.get(0).getX();
         int headY = body.get(0).getY();
-
         for (int i = 1; i < body.size(); i++) {
             if (headX == body.get(i).getX() && headY == body.get(i).getY()) {
                 return true;
             }
         }
-
         return false;
     }
 

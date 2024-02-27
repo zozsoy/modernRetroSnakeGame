@@ -18,15 +18,14 @@ public class Snake {
 
     public void move() {
         Point head = body.get(0);
-        Point newHead = new Point(head.getX() + direction.getDx(), head.getY() + direction.getDy());
+        Point newHead = new Point(head.getX() + direction.getDx() * SCALE, head.getY() + direction.getDy() * SCALE);
         body.add(0, newHead);
-        if (body.size() > 1) {
-            for (int i = 1; i < body.size(); i++) {
-                body.set(i, new Point(body.get(i).getX() + direction.getDx() * SCALE, body.get(i).getY() + direction.getDy() * SCALE));
-            }
-        }
         if (body.size() > snakeLength) {
-            body.remove(body.size() - 1);
+            body.remove(body.size() - 1); // Kuyruğun son parçasını kaldır
+        }
+        // Diğer kuyruk parçalarını güncelle
+        for (int i = 1; i < body.size(); i++) {
+            body.set(i, new Point(body.get(i).getX() + direction.getDx() * 5, body.get(i).getY() + direction.getDy() * 5));
         }
     }
 

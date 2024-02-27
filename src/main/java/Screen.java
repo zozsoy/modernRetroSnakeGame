@@ -5,7 +5,6 @@ import com.jogamp.opengl.*;
 import com.jogamp.opengl.util.FPSAnimator;
 
 public class Screen {
-
     private static volatile Screen instance;
     private GLWindow window;
 

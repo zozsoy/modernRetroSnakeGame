@@ -61,15 +61,13 @@ public class Snake {
     }
 
     public void draw(GL2 gl) {
-        gl.glPointSize(35);
+        gl.glPointSize(15);
         gl.glColor3f(0, 1, 0); // Set color to green
         gl.glBegin(GL2.GL_POINTS);
-
         List<Point> body = this.body;
         for (Point p : body) {
             gl.glVertex2i(p.getX(), p.getY());
         }
-
         gl.glEnd();
     }
 }

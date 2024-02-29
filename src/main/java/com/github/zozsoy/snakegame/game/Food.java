@@ -1,3 +1,5 @@
+package com.github.zozsoy.snakegame.game;
+
 import com.jogamp.opengl.GL2;
 
 public class Food {

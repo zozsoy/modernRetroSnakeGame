@@ -1,3 +1,6 @@
+package com.github.zozsoy.snakegame.game;
+
+import com.github.zozsoy.snakegame.controls.Direction;
 import com.jogamp.newt.event.KeyEvent;
 import com.jogamp.newt.event.KeyListener;
 import com.jogamp.opengl.GL;

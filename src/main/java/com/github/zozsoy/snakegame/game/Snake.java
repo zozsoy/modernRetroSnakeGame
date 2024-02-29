@@ -1,3 +1,5 @@
+package com.github.zozsoy.snakegame.game;
+import com.github.zozsoy.snakegame.controls.Direction;
 import com.jogamp.nativewindow.util.Point;
 import com.jogamp.opengl.GL2;
 
@@ -80,3 +82,4 @@ public class Snake {
         gl.glEnd();
     }
 }
+
